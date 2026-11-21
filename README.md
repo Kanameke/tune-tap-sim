@@ -71,10 +71,6 @@ Each PERFECT or GREAT adds a combo bonus of `min(combo, 50) × 10`. A GOOD or a 
 
 Rank is `score / max score`: **SS** at 95% or more, **S** 80%, **A** 60%, **B** 40%, otherwise **C**. Your best score per song, difficulty and note style is stored in `localStorage`.
 
-### Cards, skills, Arena
-
-The build also keeps the card collection and Arena features. Equipped card skills modify judging, for example Score Up (×1.10 to ×1.30), Perfect Boost (PERFECT window +0.015 s) or Combo Shield (GOOD no longer breaks the combo). The Midveil **Arena** mode looks for the song *One and Only* by *Midveil*, so add that song from the Sparklink Stars pack to play it.
-
 ### Settings
 
 - **Note speed** 0.5× to 3× (how fast notes fall) and **Song speed** 0.5× to 1.5× (tempo of music and chart).
@@ -177,9 +173,8 @@ Everything is in `index.html`, in this order:
 6. **Songs**: `prep(s, d)` builds the playable note list for a song and difficulty; `launch()` starts a run; `renderList()` and `renderDetail()` draw the menu.
 7. **DLC import**: `unzip()` is a small zip reader (it uses the browser's `DecompressionStream` for deflated entries), `addDlcZip(file)` reads `manifest.json`, `audio`, `jacket` and the charts and pushes a song object into `songs`. `dbo()` / `dbPut()` persist the original zips in IndexedDB (`tt_dlc`), and on startup every stored zip goes through `addDlcZip` again.
 8. **Original audio with MV** (`oaUrl`, `oaP`, `oaSet`, `oaGo`, `oaSync`): a separate `Audio` element plays the original song while the MV video is muted, kept in sync with drift correction against `T()`.
-9. **Cards, skills, Arena**: the `SK` skill table, the `G` save object (`localStorage` key `tt_gc2`), and the Arena hub near the end of the file.
 
-Storage keys: `tt_set` (settings), `tt_gc2` (cards and gems), `tt_hs_*` (high scores), `tt_oa` (original-audio choices), IndexedDB `tt_dlc` (your zips).
+Storage keys: `tt_set` (settings), `tt_hs_*` (high scores), `tt_oa` (original-audio choices), IndexedDB `tt_dlc` (your zips).
 
 ## Hacking on it
 
