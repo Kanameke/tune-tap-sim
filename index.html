@@ -4221,4 +4221,9 @@ applyEq();
  // Android app shell: back button asks the page to go back instead of closing
  window.TTBack=()=>{const b=document.querySelector('#setbox.on,#setbox.show,.ov.on');return false};
 })();
-</script></body></html>
+</script><script id="pcfeel2-js">(()=>{const ed=t=>t&&t.closest&&t.closest('input,textarea,[contenteditable]');
+const nb=e=>{if(!ed(e.target))e.preventDefault()};
+['contextmenu','selectstart','dragstart','copy','cut'].forEach(n=>{window.addEventListener(n,nb,true);document.addEventListener(n,nb,true)});
+document.addEventListener('selectionchange',()=>{const s=getSelection();if(s&&!s.isCollapsed&&!ed(document.activeElement))s.removeAllRanges()});
+addEventListener('touchstart',e=>{if(!ed(e.target)&&e.touches.length===1)window.__t=setTimeout(()=>{try{getSelection().removeAllRanges()}catch(x){}},350)},{passive:true});
+addEventListener('touchend',()=>clearTimeout(window.__t),{passive:true});})();</script><style id="pcfeel2">html,body,body *{-webkit-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important;-webkit-tap-highlight-color:transparent!important}input,textarea,[contenteditable]{-webkit-user-select:text!important;user-select:text!important}img,svg,canvas,video{pointer-events:none!important;-webkit-user-drag:none!important}::selection{background:transparent!important;color:inherit!important}input::selection,textarea::selection{background:rgba(120,90,200,.45)!important}</style></body></html>
